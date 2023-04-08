@@ -5,7 +5,7 @@ This is a lightweight and typesafe REST API that fetches the daily text from jw.
 ## Get the daily text
 
 ```
-GET /
+GET https://daily-text-api.andreimuntean.dev
 ```
 
 ### Optional parameters
@@ -18,7 +18,7 @@ GET /
 ### Example response
 
 ```javascript
-fetch("/?date=04/08/2023&lang=fr");
+fetch("https://daily-text-api.andreimuntean.dev?date=04/08/2023&lang=fr");
 ```
 
 ```json
