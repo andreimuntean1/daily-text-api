@@ -25,8 +25,9 @@ app.get('/', async (req: Request, res: Response) => {
   const $ = load(rawData);
   const text = $(".dailyText .articlePositioner").find(".tabContent:nth-child(2) > p.themeScrp > em").text().replaceAll(" ", "").replace(" ()", "");
   const verse = $(".dailyText .articlePositioner").find(".tabContent:nth-child(2) > p.themeScrp > a > em").text();
-  const comentary = $(".dailyText .articlePositioner").find(".tabContent:nth-child(2) > .bodyTxt > .section > .pGroup > p.sb").text().split(". w")[0] + ".";
-  const comentarySource = `https://wol.jw.org${$(".dailyText .articlePositioner").find(".tabContent:nth-child(2) > .bodyTxt > .section > .pGroup > p.sb > a:last-of-type").attr('href')}`;
+  const comentary = $(".dailyText .articlePositioner").find(".tabContent:nth-child(2) > .bodyTxt > p.sb").text().split(". w")[0] + ".";
+  const comentarySource = `https://wol.jw.org${$(".dailyText .articlePositioner").find(".tabContent:nth-child(2) > .bodyTxt > p.sb > a:last-of-type").attr('href')}`;
+
 
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.statusCode = 200;
