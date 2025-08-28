@@ -4,6 +4,7 @@ import moment from "moment";
 import axios from "axios";
 
 const app: Express = express();
+const port = process.env.PORT || 3000; 
 
 async function getLanguage(lang: string = "en") {
   const url = `https://wol.jw.org/${lang}/wol/li/r34/lp-m`;
@@ -34,4 +35,4 @@ app.get('/', async (req: Request, res: Response) => {
   res.send(JSON.stringify({ verse, text, comentary, comentarySource, url }));
 });
 
-app.listen(5000, () => console.log("The API is up and running 🚀"));
+app.listen(port, () => console.log(`The API is up on port ${port} and running 🚀`));
